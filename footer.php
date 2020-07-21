@@ -1,5 +1,5 @@
     
-    <section class="bg-dark py-5 text-white mt-5">
+    <section class=" py-5 text-white mt-5" style="font-size:15px; background-color:black;">
         <!-- add 'footer' snippet in css -->
         <div class="footer-v1 bg-img">
             <div class="footer no-margin">
@@ -37,6 +37,13 @@
                   </ul>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-md-12 text-center py-2">
+                        <p>@copyrights reserved by Wai Lin</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
