@@ -8,6 +8,7 @@ body {
     font-size: 62.5%;
     font-size: 12px;
     background-color: white;
+    overflow-x:hidden;
 }
 /*-- Inspiration taken from abdo steif -->
 /* --> https://codepen.io/abdosteif/pen/bRoyMb?editors=1100*/
@@ -16,7 +17,7 @@ body {
 
 .nav {
     width: 100%;
-    height: 65px;
+    height: 70px;
     position: fixed;
     line-height: 65px;
     text-align: center;
@@ -78,10 +79,9 @@ body {
 .home {
     width: 100%;
     height: 100vh;
-    /* background-image: url(https://images.unsplash.com/photo-1498550744921-75f79806b8a7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b0f6908fa5e81286213c7211276e6b3d&auto=format&fit=crop&w=1500&q=80); */
     background-image: url(https://images.unsplash.com/photo-1583565252160-1043f5214eea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
     background-position: center top;
-	background-size:cover;
+    background-size:cover;
 }
 
 .navTrigger {
@@ -425,6 +425,11 @@ body {
     background-color: white;
     color: purple;
   }
+
+  .btn-logout {
+    background-color: darkred;
+    color: white;
+  }
   
   .login:hover {
     color: white;
@@ -440,11 +445,60 @@ body {
     transform: translate(0px, -5px);
     -webkit-transform: translate(0px, -5px);
   }
+  .btn-logout:hover{
+    color: white;
+    box-shadow: 0px 5px 0px 0px rgb(48, 0, 0);
+
+    transform: translate(0px, -5px);
+    -webkit-transform: translate(0px, -5px);
+  }
 
   .btn:active {
     transform: translate(0px, 5px);
     -webkit-transform: translate(0px, 5px);
     box-shadow: 0px 1px 0px 0px;
     color: white;
+  }
+
+  .social{
+      color: white;
+  }
+  .social:hover{
+    color: purple;
+  }
+  #cursor{
+      cursor: pointer;
+  }
+  #cursor_arrow{
+      cursor: default;
+  }
+
+.tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px 0 12px;
+    position: absolute;
+    z-index: 1;
+    top: 5px;
+    left: 110%;
+  }
+  
+.tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+  }
+  
+  .reg:hover .tooltiptext {
+    visibility: visible;
   }
    

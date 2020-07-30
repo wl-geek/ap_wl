@@ -1,103 +1,111 @@
 <?php include('header.php');
 include_once('db/config.php');
- $sql = "SELECT items.*,categories.category_name FROM items INNER JOIN categories ON items.category_id = categories.id";
- // echo $sql; exit();
- $result = mysqli_query($con,$sql);
 ?>
 
 <section class="home">
-    <h2 class="myH2" style = "padding-top:300px;">Air Pollution</h2>
-    <div id="buttons">
+    <section style = "padding-top:300px;"></section>
+    <h2 class="myH2" data-aos="fade-right">Air Pollution</h2>
+    <div id="buttons" data-aos="fade-left">
       <a href="login.php" class="btn login">LOG IN</a>
-      <a href="user/register.php" class="btn reg">SIGN UP</a>
+      <a href="user/register.php" class="btn reg">SIGN UP<span class="tooltiptext" style="font-size:15px;">Sign up now to get<br>free pollution testing kit!</span></a>
     </div>
-    <p class="myP">Scroll down</p>
-    <p style="text-align: center">
+    <p class="myP" data-aos="fade-right">Scroll down</p>
+    <p style="text-align: center" data-aos="fade-right">
         <i class="glyphicon glyphicon-chevron-down"></i>
     </p>
 </section>
 
-<section>
+<section class="text-white pt-4 pb-5" style="background-color: black;">
+<section data-aos="fade-left">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 text-center mt-4">
-                <h1>What is Air Pollution?</h1>
+            <div class="col-md-12 text-center mt-5">
+                <h1>Real-time Yangon Air Quality Index & Weather Forecast</h1>
+                <hr my-1>
             </div>
         </div>
     </div>
 </section>
 
-<section>
-    <div class="container my-5">
+<section data-aos="fade-right">
+    <div class="container my-5" style="padding-top:20px; padding-bottom:40px">
         <div class="row">
-            <div class="col-md-6">
-                <img src="img/pic1.jpg" width="100%"/>
+            <div class="col-md-4 text-center">
+                <div  id='my-container'></div>  
+                <script  type="text/javascript"  charset="utf-8">  
+                _aqiFeed({  city:"yangon",  lang:"en",  callback:function(aqi){  
+                  $("#my-container").html(aqi.details);  
+                }  });  
+                </script>
+                <p style="padding-top:4px;">Source: https://aqicn.org</p>
             </div>
-            <div class="col-md-6">
-                <h2 class="mt-0">What is Air Pollution?</h2>
-                <p class="pt-4" style="font-size:20px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit ratione, deleniti minus soluta asperiores, 
-                sit quos pariatur qui cupiditate corporis cum dolor. Earum ut aperiam impedit porro neque qui fugiat? 
-                </p>
-                <a class="btn login" href="aboutus.php" role="button">Read More</a>
+            <div class="col-md-7 text-center">
+                <a class="weatherwidget-io" href="https://forecast7.com/en/16d8796d20/yangon/" data-label_1="YANGON" data-label_2="WEATHER" data-font="Roboto" data-theme="candy" >YANGON WEATHER</a>
+                <script>
+                    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+                </script>
             </div>
         </div>
     </div>
 </section>
-<section>
+</section>
+
+<section style="padding-top:30px; padding-bottom:30px">
+    <div class="container mt-4 mb-5">
+        <div class="row py-5">
+            <div class="col-md-6" data-aos="fade-right">
+                <img src="img/pic1.jpg" width="100%" class="py-5"/>
+            </div>
+            <div class="col-md-6" data-aos="fade-right">
+                <h2 style="padding-top:18px">What is Air Pollution?</h2>
+                <p class="pt-4" style="font-size:20px">Air pollution is a mix of particles and gases that can reach harmful concentrations both outside and indoors.
+                 Its effects can range from higher disease risks to rising temperatures...
+                </p>
+                <a class="btn login" href="aboutus.php" role="button" style="margin-left:150px">Read More</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="text-white" style="background-color: black; padding-top:30px; padding-bottom:30px;">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h2 class="mt-0">What is Air Pollution?</h2>
-                <p class="pt-4" style="font-size:20px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit ratione, deleniti minus soluta asperiores, 
-                sit quos pariatur qui cupiditate corporis cum dolor. Earum ut aperiam impedit porro neque qui fugiat? 
+        <div class="row py-5">
+            <div class="col-md-6" data-aos="fade-left">
+                <h2 style="padding-top:50px">How can Air Pollution affect us?</h2>
+                <p class="pt-4" style="font-size:20px">We release a variety of chemicals into the atmosphere when we burn the fossil fuels we use every day. 
+                We breathe air to live and what we breathe has a direct impact on our health...
                 </p>
-                <a class="btn login" href="aboutus.php" role="button">Read More</a>
+                <a class="btn login" href="aboutus.php" role="button" style="margin-left:150px">Read More</a>
             </div>
-            <div class="col-md-6">
-                <img src="img/pic1.jpg" width="100%"/>
+            <div class="col-md-6" data-aos="fade-left">
+                <img src="img/pic2.jpg" width="100%" class="py-5"/>
             </div>
         </div>
     </div>
 </section>
 
-<section>
-    <div class="container mt-5 mb-4">
-        <div class="row">
-            <div class="col-md-6">
-                <img src="img/pic1.jpg" width="100%"/>
-            </div>
-            <div class="col-md-6">
-                <h2 class="mt-0">What is Air Pollution?</h2>
-                <p class="pt-4" style="font-size:20px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit ratione, deleniti minus soluta asperiores, 
-                sit quos pariatur qui cupiditate corporis cum dolor. Earum ut aperiam impedit porro neque qui fugiat? 
-                </p>
-                <a class="btn login" href="aboutus.php" role="button">Read More</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section>
+<section data-aos="fade-right">
     <div class="container mb-4">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 text-center">
+                <br>
                 <h1>Our Partners</h1>
+                <br>
             </div>
         </div>
     </div>
 </section>
 
-<section>
+<section data-aos="fade-left">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <div class="card">
-                    <img src="img/pic2.jpg" class="mb-3" alt="" style="height:200px;">
-                <div class="card-body">
+                <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                    <img src="img/who.png" alt="" style="height:270px;">
+                <div class="card-body" style="background-color:black; color:white;">
                     <h3 class="card-title">World Health Organization</h3>
-                    <p class="card-text" style="font-size:15px">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Nostrum quisquam modi perferendis provident aut dolore consequuntur aliquam.
-                     Temporibus aliquid voluptatem quia labore, ipsa architecto! Exercitationem qui dicta quisquam ducimus maiores!</p>
+                    <br>
+                    <p class="card-text" style="font-size:15px">We are building a better, healthier future for people all over the world. 
+                    Together we strive to combat both communicable and noncommunicable diseases...</p>
                 <div class="text-warning">
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -110,13 +118,13 @@ include_once('db/config.php');
                 </div>
             </div>
         <div class="col-md-4">
-                <div class="card">
-                    <img src="img/pic2.jpg" class="mb-3" alt="" style="height:200px;">
-                <div class="card-body">
+                <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                    <img src="img/iqair.jpg" alt="" style="height:270px;">
+                <div class="card-body" style="background-color:black; color:white;">
                     <h3 class="card-title">IQ Air</h3>
-                    <p class="card-text" style="font-size:15px">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Nostrum quisquam modi perferendis provident aut dolore consequuntur aliquam.
-                     Temporibus aliquid voluptatem quia labore, ipsa architecto! Exercitationem qui dicta quisquam ducimus maiores!</p>
+                    <br>
+                    <p class="card-text" style="font-size:15px">IQAir is a Swiss air quality technology company, specializing in protection against airborne pollutants, 
+                    developing air quality monitoring and air cleaning products...</p>
                 <div class="text-warning">
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -129,13 +137,13 @@ include_once('db/config.php');
                 </div>
             </div>
         <div class="col-md-4">
-                <div class="card">
-                    <img src="img/pic2.jpg" class="mb-3" alt="" style="height:200px;">
-                <div class="card-body">
+                <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                    <img src="img/aqy.jpg" alt="" style="height:270px;">
+                <div class="card-body" style="background-color:black; color:white;">
                     <h3 class="card-title">Air Quality Yangon</h3>
-                    <p class="card-text" style="font-size:15px">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Nostrum quisquam modi perferendis provident aut dolore consequuntur aliquam.
-                     Temporibus aliquid voluptatem quia labore, ipsa architecto! Exercitationem qui dicta quisquam ducimus maiores!</p>
+                    <br>
+                    <p class="card-text" style="font-size:15px">AQY measures and calculates the quality of air in Yangon, 
+                    and aims to help citizens understand the condition and importance of air around us...</p>
                 <div class="text-warning">
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
